@@ -14,7 +14,7 @@ class MainViewModel: ViewModel() {
 
     init {
         viewModelScope.launch {
-            Greeting().greet().collect{phrase ->
+            Greeting().greet().collect{ phrase ->
                 _greetingList.update {list ->
                     list + phrase
                 }
