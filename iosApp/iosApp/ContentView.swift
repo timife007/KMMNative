@@ -19,7 +19,16 @@ extension ContentView{
         @Published var greetings: Array<String> = []
         
         func startObserving(){
-            
+            Task{
+                do{
+                    let sequence = asyncSequence(for: Greeting().greet())
+                    for try await phrase in sequence {
+                        self.greetings.append(phrase)
+                    }
+                }catch{
+                    print("Failed with error: \(error)")
+                }
+            }
         }
     }
 }

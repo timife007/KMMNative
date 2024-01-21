@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     kotlin("plugin.serialization") version "1.9.21"
     id("com.google.devtools.ksp")
-//    id("com.rickclephas.kmp.nativecoroutines")
+    id("com.rickclephas.kmp.nativecoroutines")
 }
 
 kotlin {
@@ -28,9 +28,9 @@ kotlin {
     }
 
     sourceSets {
-//        all{
-//            languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
-//        }
+        all{
+            languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
+        }
 
         commonMain.dependencies {
             //            //put your multiplatform dependencies here
