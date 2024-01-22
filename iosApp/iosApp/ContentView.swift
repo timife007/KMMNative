@@ -1,6 +1,10 @@
 import SwiftUI
 import shared
 
+import KMPNativeCoroutinesAsync
+import KMPNativeCoroutinesCore
+
+
 struct ContentView: View {
     @ObservedObject private(set) var viewModel: ViewModel
 	let phrases = Greeting().greet()
@@ -17,6 +21,7 @@ extension ContentView{
     @MainActor
     class ViewModel: ObservableObject{
         @Published var greetings: Array<String> = []
+
         
         func startObserving(){
             Task{
@@ -44,6 +49,6 @@ struct ListView: View {
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
-		ContentView()
+        ContentView(viewModel: ContentView.ViewModel())
 	}
 }

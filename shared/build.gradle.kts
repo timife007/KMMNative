@@ -5,6 +5,7 @@ plugins {
     kotlin("plugin.serialization") version "1.9.21"
     id("com.google.devtools.ksp")
     id("com.rickclephas.kmp.nativecoroutines")
+//    id("co.touchlab.skie") version "0.5.6"
 }
 
 kotlin {

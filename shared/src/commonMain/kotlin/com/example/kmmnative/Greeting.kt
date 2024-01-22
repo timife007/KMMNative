@@ -14,7 +14,7 @@ class Greeting {
     private val rocketComponent = RocketComponent()
 
     @NativeCoroutines
-    fun greet(): Flow<String> = flow{
+    fun greet(): Flow<String> = flow {
         emit(if (Random.nextBoolean()) "Hi!" else "Hello!")
         delay(1.seconds)
         emit("Guess what this is! > ${platform.name.reversed()}")
